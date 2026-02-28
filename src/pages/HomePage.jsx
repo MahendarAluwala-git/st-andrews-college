@@ -482,18 +482,27 @@ const HomePage = () => {
 <section className="py-12 sm:py-16 md:py-20 bg-white">
   <div className="container-custom px-4 sm:px-6 lg:px-8">
     <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
-      {/* Principal's Image */}
+      {/* Principal's Image - WITH REAL IMAGE */}
       <div className="order-2 lg:order-1">
         <div className="relative">
           <div className="w-full max-w-md mx-auto">
-            <div className="aspect-[4/5] bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl overflow-hidden shadow-xl">
-              <div className="w-full h-full flex items-center justify-center">
-                <UserCircleIcon className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 text-white/80" />
-              </div>
+            <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
+            <img 
+  src="https://images.pexels.com/photos/3778603/pexels-photo-3778603.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop" 
+  alt="Dr. James Anderson - Principal"
+  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+/>
+
             </div>
-            {/* Decorative element */}
+            {/* Decorative elements */}
             <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary-100 rounded-full -z-10"></div>
             <div className="absolute -top-4 -left-4 w-16 h-16 bg-primary-200 rounded-full -z-10"></div>
+            
+            {/* Badge */}
+            <div className="absolute -left-2 top-1/2 transform -translate-y-1/2 bg-primary-600 text-white px-4 py-2 rounded-r-lg shadow-lg">
+              <p className="text-sm font-semibold">25+ Years</p>
+              <p className="text-xs opacity-90">of Leadership</p>
+            </div>
           </div>
         </div>
       </div>
@@ -508,7 +517,7 @@ const HomePage = () => {
         <div className="space-y-4 sm:space-y-5">
           <p className="text-sm sm:text-base text-secondary-600 leading-relaxed italic">
             "Education is not the filling of a pail, but the lighting of a fire. At St. Andrew's College, 
-            we believe in nurturing not just academic excellence, but the complete development of every student.
+            we believe in nurturing not just academic excellence, but the complete development of every student."
           </p>
           
           <p className="text-sm sm:text-base text-secondary-600 leading-relaxed">
@@ -527,9 +536,13 @@ const HomePage = () => {
 
         <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-secondary-200">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 sm:w-14 sm:h-14 bg-primary-600 rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl">
-              Dr.
-            </div>
+           <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border-2 border-primary-600">
+  <img 
+    src="https://images.pexels.com/photos/3778603/pexels-photo-3778603.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop" 
+    alt="Dr. James Anderson"
+    className="w-full h-full object-cover"
+  />
+</div>
             <div>
               <h3 className="text-base sm:text-lg font-bold text-secondary-900">Dr. James Anderson</h3>
               <p className="text-xs sm:text-sm text-primary-600">Principal, St. Andrew's College</p>

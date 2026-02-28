@@ -53,14 +53,12 @@ const AcademicsPage = () => {
   return (
     <div>
       {/* Hero Section - Responsive */}
-      <section className="relative py-16 sm:py-20 md:py-24 lg:py-28 bg-gradient-to-r from-primary-600 to-primary-700 text-white">
-        <div className="container-custom px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4">Academics at St. Andrew's</h1>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 max-w-3xl mx-auto px-4">
-            Excellence in education through innovative curriculum and experienced faculty
-          </p>
-        </div>
-      </section>
+  <PageHeader 
+  title="Academics at St. Andrew's"
+  subtitle="Excellence in education through innovative curriculum and experienced faculty"
+  breadcrumb="Academics"
+  bgImage="https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
+/>
 
       {/* Navigation Tabs - Responsive */}
       <section className="py-4 sm:py-6 bg-white border-b top-16 z-40 shadow-sm">

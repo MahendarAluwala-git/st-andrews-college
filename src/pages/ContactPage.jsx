@@ -28,14 +28,12 @@ const ContactPage = () => {
   return (
     <div>
       {/* Hero Section - Responsive */}
-      <section className="relative py-16 sm:py-20 md:py-24 lg:py-28 bg-gradient-to-r from-primary-600 to-primary-700 text-white">
-        <div className="container-custom px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4">Contact Us</h1>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 max-w-3xl mx-auto px-4">
-            Get in touch with us for any queries or assistance
-          </p>
-        </div>
-      </section>
+      <PageHeader 
+  title="Contact Us"
+  subtitle="Get in touch with us for any queries or assistance"
+  breadcrumb="Contact"
+  bgImage="https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
+/>
 
       {/* Contact Info Cards - Responsive */}
       <section className="py-12 sm:py-16 bg-white">

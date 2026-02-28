@@ -17,27 +17,41 @@ import GalleryPage from './pages/GalleryPage';
 import NewsEventsPage from './pages/NewsEventsPage';
 import ContactPage from './pages/ContactPage';
 
-// Student Pages
+// Student Portal Pages
 import StudentLogin from './pages/student/StudentLogin';
 import StudentDashboard from './pages/student/StudentDashboard';
+import StudentProfile from './pages/student/StudentProfile';
+import StudentAcademics from './pages/student/StudentAcademics';
+import StudentAttendance from './pages/student/StudentAttendance';
+import StudentExams from './pages/student/StudentExams';
+import StudentFees from './pages/student/StudentFees';
+import StudentNotifications from './pages/student/StudentNotifications';
 
-// Faculty Pages
+// Faculty Portal Pages
 import FacultyLogin from './pages/faculty/FacultyLogin';
 import FacultyDashboard from './pages/faculty/FacultyDashboard';
+import AttendanceMarking from './pages/faculty/AttendanceMarking';
+import AssignmentUpload from './pages/faculty/AssignmentUpload';
+import MarksEntry from './pages/faculty/MarksEntry';
+import StudentList from './pages/faculty/StudentList';
+import FacultyProfile from './pages/faculty/FacultyProfile';
 
-// Admin Pages
+// Admin Panel Pages
 import AdminLogin from './pages/admin/AdminLogin';
 import AdminDashboard from './pages/admin/AdminDashboard';
+import StudentManagement from './pages/admin/StudentManagement';
+import FacultyManagement from './pages/admin/FacultyManagement';
+import AcademicManagement from './pages/admin/AcademicManagement';
+import AdmissionManagement from './pages/admin/AdmissionManagement';
+import CMSManagement from './pages/admin/CMSManagement';
+import ExaminationManagement from './pages/admin/ExaminationManagement';
+import FeeManagement from './pages/admin/FeeManagement';
 
-// ScrollToTop Component
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [pathname]);
 
   return null;
@@ -47,10 +61,10 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-secondary-50">
         <Toaster position="top-right" />
         <Routes>
-          {/* Public Routes */}
+          {/* Public Routes with MainLayout */}
           <Route path="/" element={<MainLayout />}>
             <Route index element={<HomePage />} />
             <Route path="about" element={<AboutPage />} />
@@ -63,18 +77,36 @@ function App() {
             <Route path="news-events" element={<NewsEventsPage />} />
             <Route path="contact" element={<ContactPage />} />
             
-            {/* Student Routes */}
+            {/* Login Pages - NOW WRAPPED IN MAINLAYOUT (will have navbar) */}
             <Route path="student/login" element={<StudentLogin />} />
-            <Route path="student/dashboard" element={<StudentDashboard />} />
-            
-            {/* Faculty Routes */}
             <Route path="faculty/login" element={<FacultyLogin />} />
-            <Route path="faculty/dashboard" element={<FacultyDashboard />} />
-            
-            {/* Admin Routes */}
             <Route path="admin/login" element={<AdminLogin />} />
-            <Route path="admin/dashboard" element={<AdminDashboard />} />
           </Route>
+
+          {/* Panel Pages - WITHOUT MainLayout (no navbar, only sidebar) */}
+          <Route path="/student/dashboard" element={<StudentDashboard />} />
+          <Route path="/student/profile" element={<StudentProfile />} />
+          <Route path="/student/academics" element={<StudentAcademics />} />
+          <Route path="/student/attendance" element={<StudentAttendance />} />
+          <Route path="/student/exams" element={<StudentExams />} />
+          <Route path="/student/fees" element={<StudentFees />} />
+          <Route path="/student/notifications" element={<StudentNotifications />} />
+
+          <Route path="/faculty/dashboard" element={<FacultyDashboard />} />
+          <Route path="/faculty/attendance" element={<AttendanceMarking />} />
+          <Route path="/faculty/assignments" element={<AssignmentUpload />} />
+          <Route path="/faculty/marks" element={<MarksEntry />} />
+          <Route path="/faculty/students" element={<StudentList />} />
+          <Route path="/faculty/profile" element={<FacultyProfile />} />
+
+          <Route path="/admin/dashboard" element={<AdminDashboard />} />
+          <Route path="/admin/students" element={<StudentManagement />} />
+          <Route path="/admin/faculty" element={<FacultyManagement />} />
+          <Route path="/admin/academics" element={<AcademicManagement />} />
+          <Route path="/admin/admissions" element={<AdmissionManagement />} />
+          <Route path="/admin/cms" element={<CMSManagement />} />
+          <Route path="/admin/exams" element={<ExaminationManagement />} />
+          <Route path="/admin/fees" element={<FeeManagement />} />
         </Routes>
       </div>
     </Router>
