@@ -17,8 +17,13 @@ import GalleryPage from './pages/GalleryPage';
 import NewsEventsPage from './pages/NewsEventsPage';
 import ContactPage from './pages/ContactPage';
 
-// Student Portal Pages
+// Login Pages
 import StudentLogin from './pages/student/StudentLogin';
+import FacultyLogin from './pages/faculty/FacultyLogin';
+import AdminLogin from './pages/admin/AdminLogin';
+import ParentLogin from './pages/ParentLogin';
+
+// Student Portal Pages
 import StudentDashboard from './pages/student/StudentDashboard';
 import StudentProfile from './pages/student/StudentProfile';
 import StudentAcademics from './pages/student/StudentAcademics';
@@ -28,7 +33,6 @@ import StudentFees from './pages/student/StudentFees';
 import StudentNotifications from './pages/student/StudentNotifications';
 
 // Faculty Portal Pages
-import FacultyLogin from './pages/faculty/FacultyLogin';
 import FacultyDashboard from './pages/faculty/FacultyDashboard';
 import AttendanceMarking from './pages/faculty/AttendanceMarking';
 import AssignmentUpload from './pages/faculty/AssignmentUpload';
@@ -37,7 +41,6 @@ import StudentList from './pages/faculty/StudentList';
 import FacultyProfile from './pages/faculty/FacultyProfile';
 
 // Admin Panel Pages
-import AdminLogin from './pages/admin/AdminLogin';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import StudentManagement from './pages/admin/StudentManagement';
 import FacultyManagement from './pages/admin/FacultyManagement';
@@ -64,8 +67,9 @@ function App() {
       <div className="min-h-screen bg-secondary-50">
         <Toaster position="top-right" />
         <Routes>
-          {/* Public Routes with MainLayout */}
+          {/* ALL PUBLIC ROUTES WITH MAINLAYOUT (includes Header & Navbar) */}
           <Route path="/" element={<MainLayout />}>
+            {/* Main Pages */}
             <Route index element={<HomePage />} />
             <Route path="about" element={<AboutPage />} />
             <Route path="academics" element={<AcademicsPage />} />
@@ -77,13 +81,14 @@ function App() {
             <Route path="news-events" element={<NewsEventsPage />} />
             <Route path="contact" element={<ContactPage />} />
             
-            {/* Login Pages - NOW WRAPPED IN MAINLAYOUT (will have navbar) */}
+            {/* LOGIN PAGES - NOW INSIDE MAINLAYOUT (will have Header & Navbar) */}
             <Route path="student/login" element={<StudentLogin />} />
             <Route path="faculty/login" element={<FacultyLogin />} />
             <Route path="admin/login" element={<AdminLogin />} />
+            <Route path="parent/login" element={<ParentLogin />} />
           </Route>
 
-          {/* Panel Pages - WITHOUT MainLayout (no navbar, only sidebar) */}
+          {/* PANEL PAGES - WITHOUT MAINLAYOUT (no Header/Navbar, only sidebar) */}
           <Route path="/student/dashboard" element={<StudentDashboard />} />
           <Route path="/student/profile" element={<StudentProfile />} />
           <Route path="/student/academics" element={<StudentAcademics />} />

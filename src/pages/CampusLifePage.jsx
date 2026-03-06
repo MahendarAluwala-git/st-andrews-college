@@ -8,6 +8,7 @@ import {
   CameraIcon
 } from '@heroicons/react/24/outline';
 import PageHeader from '../components/ui/PageHeader';
+import Navbar from '../components/common/Navbar';
 import { imageUrls } from '../data/imageUrls';
 
 const CampusLifePage = () => {
@@ -49,13 +50,15 @@ const CampusLifePage = () => {
 
   return (
     <div>
-      {/* Hero Section */}
       <PageHeader 
-  title="Campus Life"
-  subtitle="Experience a vibrant and enriching campus life beyond academics"
-  breadcrumb="Campus Life"
-  bgImage="https://images.pexels.com/photos/976866/pexels-photo-976866.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
-/>
+        title="Campus Life"
+        subtitle="Experience a vibrant and enriching campus life beyond academics"
+        breadcrumb="Campus Life"
+        page="campus"
+      />
+
+      {/* Navbar */}
+      <Navbar />
 
       {/* Overview */}
       <section className="py-12 sm:py-16 bg-white">

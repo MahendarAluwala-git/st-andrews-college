@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRightIcon, GlobeAltIcon, HeartIcon } from '@heroicons/react/24/outline';
 import PageHeader from '../components/ui/PageHeader';
+import Navbar from '../components/common/Navbar';
 import SectionTitle from '../components/ui/SectionTitle';
 import { imageUrls } from '../data/imageUrls';
 
@@ -22,17 +23,54 @@ const AboutPage = () => {
     { year: '2024', title: 'Center of Excellence', description: 'Recognized as Center of Excellence', icon: '🏆' },
   ];
 
+  const leadership = [
+    {
+      name: 'Dr. James Anderson',
+      role: 'Principal',
+      qualification: 'Ph.D. in Education',
+      experience: '25+ years',
+      image: imageUrls.profiles.principal,
+    },
+    {
+      name: 'Prof. Sarah Williams',
+      role: 'Dean of Academics',
+      qualification: 'Ph.D. in Mathematics',
+      experience: '20+ years',
+      image: imageUrls.profiles.teacher2,
+    },
+    {
+      name: 'Dr. Michael Chen',
+      role: 'Dean of Research',
+      qualification: 'Ph.D. in Physics',
+      experience: '18+ years',
+      image: imageUrls.profiles.teacher1,
+    },
+  ];
+
+  const facilities = [
+    { name: 'Smart Classrooms', count: '60+', icon: '💻', image: imageUrls.campus.lab },
+    { name: 'Library', count: '50K+', icon: '📚', image: imageUrls.campus.library },
+    { name: 'Labs', count: '30+', icon: '🔬', image: imageUrls.campus.lab },
+    { name: 'Sports Complex', count: '10+', icon: '🏃', image: imageUrls.campus.sports },
+    { name: 'Hostels', count: '1000+', icon: '🏠', image: imageUrls.campus.building },
+    { name: 'Auditorium', count: '1000+', icon: '🎭', image: imageUrls.campus.auditorium },
+  ];
+
   return (
-    <div className="animate-fade-in">
-    <PageHeader 
-  title="About St. Andrew's College"
-  subtitle="Nurturing minds, building character, and shaping futures for nearly five decades"
-  breadcrumb="About Us"
-  bgImage="https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
-/>
+    <div className="overflow-hidden">
+      <PageHeader 
+        title="About St. Andrew's College"
+        subtitle="Nurturing minds, building character, and shaping futures for nearly five decades"
+        breadcrumb="About Us"
+        page="about"
+      />
+
+      {/* Navbar */}
+      <Navbar />
+
       {/* Stats Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
+        <div className="container-custom px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((stat, index) => (
               <div key={index} className="stat-card animate-slide-up" style={{ animationDelay: `${index * 100}ms` }}>
@@ -45,8 +83,8 @@ const AboutPage = () => {
       </section>
 
       {/* History Section */}
-      <section className="section-padding bg-gradient-to-br from-secondary-50 to-white">
-        <div className="container-custom">
+      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-secondary-50 to-white">
+        <div className="container-custom px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-slide-up">
               <span className="section-tag">Our Legacy</span>
@@ -83,8 +121,8 @@ const AboutPage = () => {
       </section>
 
       {/* Vision & Mission */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
+        <div className="container-custom px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-secondary-50 p-8 rounded-xl hover:shadow-md transition-shadow">
               <GlobeAltIcon className="w-12 h-12 text-primary-600 mb-4" />
@@ -107,8 +145,8 @@ const AboutPage = () => {
       </section>
 
       {/* Milestones */}
-      <section className="section-padding bg-gradient-to-br from-secondary-50 to-white">
-        <div className="container-custom">
+      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-secondary-50 to-white">
+        <div className="container-custom px-4 sm:px-6 lg:px-8">
           <SectionTitle 
             tag="Our Journey"
             title="Key Milestones"
@@ -123,6 +161,70 @@ const AboutPage = () => {
                 <span className="text-primary-600 font-bold text-xl">{milestone.year}</span>
                 <h3 className="text-lg font-semibold mt-2">{milestone.title}</h3>
                 <p className="text-secondary-600">{milestone.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership */}
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
+        <div className="container-custom px-4 sm:px-6 lg:px-8">
+          <SectionTitle 
+            tag="Our Leadership"
+            title="Meet Our Leaders"
+            description="Experienced educators dedicated to your success"
+            centered
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {leadership.map((leader, index) => (
+              <div key={index} className="bg-secondary-50 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="h-64 overflow-hidden">
+                  <img 
+                    src={leader.image} 
+                    alt={leader.name}
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-6 text-center">
+                  <h3 className="text-xl font-bold mb-1">{leader.name}</h3>
+                  <p className="text-primary-600 font-medium mb-2">{leader.role}</p>
+                  <p className="text-secondary-600 text-sm mb-1">{leader.qualification}</p>
+                  <p className="text-sm text-secondary-500">Experience: {leader.experience}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Facilities */}
+      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-secondary-50 to-white">
+        <div className="container-custom px-4 sm:px-6 lg:px-8">
+          <SectionTitle 
+            tag="Infrastructure"
+            title="World-Class Facilities"
+            description="State-of-the-art infrastructure for holistic learning"
+            centered
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {facilities.map((facility, index) => (
+              <div key={index} className="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+                <div className="h-48 overflow-hidden">
+                  <img 
+                    src={facility.image} 
+                    alt={facility.name}
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-4">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-lg font-semibold">{facility.name}</h3>
+                    <span className="text-primary-600 font-bold">{facility.count}</span>
+                  </div>
+                </div>
               </div>
             ))}
           </div>

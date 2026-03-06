@@ -1,13 +1,15 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Navbar from '../components/common/Navbar';
+import CollegeHeader from '../components/common/CollegeHeader';
 import Footer from '../components/common/Footer';
+import PopupSlider from '../components/common/PopupSlider';
 
 const MainLayout = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar />
-      <main className="flex-grow pt-16">
+      <PopupSlider />
+      <CollegeHeader />
+      <main className="flex-grow">
         <Outlet />
       </main>
       <Footer />

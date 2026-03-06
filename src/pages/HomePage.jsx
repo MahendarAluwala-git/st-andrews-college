@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { UserCircleIcon } from '@heroicons/react/24/outline';
 import { 
   AcademicCapIcon, 
   BuildingLibraryIcon, 
@@ -19,6 +18,7 @@ import {
   HeartIcon,
   LightBulbIcon
 } from '@heroicons/react/24/outline';
+import Navbar from '../components/common/Navbar'; // THIS IMPORT IS CRITICAL
 
 const HomePage = () => {
   const stats = [
@@ -186,7 +186,7 @@ const HomePage = () => {
 
   return (
     <div className="overflow-hidden">
-      {/* ===== HERO SECTION - FULLY RESPONSIVE ===== */}
+      {/* ===== HERO SECTION ===== */}
       <section className="relative w-full h-[100vh] min-h-[500px] max-h-[1080px] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 w-full h-full">
@@ -277,7 +277,12 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* ===== STATS SECTION - FULLY RESPONSIVE ===== */}
+      {/* ===== NAVBAR - ADDED RIGHT AFTER HERO SECTION ===== */}
+      <Navbar />
+
+      {/* ===== REST OF THE PAGE CONTENT ===== */}
+      
+      {/* Stats Section */}
       <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="container-custom px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 md:gap-6">
@@ -295,7 +300,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* ===== COURSES SECTION - FULLY RESPONSIVE ===== */}
+      {/* Courses Section */}
       <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-secondary-50">
         <div className="container-custom px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-10 md:mb-12">
@@ -365,7 +370,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* ===== CAMPUS LIFE SECTION - FULLY RESPONSIVE ===== */}
+      {/* Campus Life Section */}
       <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="container-custom px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-10 md:mb-12">
@@ -406,7 +411,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* ===== NEWS & EVENTS SECTION - FULLY RESPONSIVE ===== */}
+      {/* News & Events Section */}
       <section className="py-12 sm:py-16 md:py-20 bg-secondary-50">
         <div className="container-custom px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
@@ -478,83 +483,81 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-{/* ===== PRINCIPAL'S MESSAGE SECTION - FULLY RESPONSIVE ===== */}
-<section className="py-12 sm:py-16 md:py-20 bg-white">
-  <div className="container-custom px-4 sm:px-6 lg:px-8">
-    <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
-      {/* Principal's Image - WITH REAL IMAGE */}
-      <div className="order-2 lg:order-1">
-        <div className="relative">
-          <div className="w-full max-w-md mx-auto">
-            <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
-            <img 
-  src="https://images.pexels.com/photos/3778603/pexels-photo-3778603.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop" 
-  alt="Dr. James Anderson - Principal"
-  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-/>
 
+      {/* Principal's Message Section */}
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
+        <div className="container-custom px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
+            {/* Principal's Image */}
+            <div className="order-2 lg:order-1">
+              <div className="relative">
+                <div className="w-full max-w-md mx-auto">
+                  <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
+                    <img 
+                      src="https://images.pexels.com/photos/3778603/pexels-photo-3778603.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop" 
+                      alt="Dr. James Anderson - Principal"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary-100 rounded-full -z-10"></div>
+                  <div className="absolute -top-4 -left-4 w-16 h-16 bg-primary-200 rounded-full -z-10"></div>
+                  <div className="absolute -left-2 top-1/2 transform -translate-y-1/2 bg-primary-600 text-white px-4 py-2 rounded-r-lg shadow-lg">
+                    <p className="text-sm font-semibold">25+ Years</p>
+                    <p className="text-xs opacity-90">of Leadership</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            {/* Decorative elements */}
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary-100 rounded-full -z-10"></div>
-            <div className="absolute -top-4 -left-4 w-16 h-16 bg-primary-200 rounded-full -z-10"></div>
-            
-            {/* Badge */}
-            <div className="absolute -left-2 top-1/2 transform -translate-y-1/2 bg-primary-600 text-white px-4 py-2 rounded-r-lg shadow-lg">
-              <p className="text-sm font-semibold">25+ Years</p>
-              <p className="text-xs opacity-90">of Leadership</p>
+
+            {/* Principal's Message Content */}
+            <div className="order-1 lg:order-2">
+              <span className="badge badge-primary mb-3 sm:mb-4 inline-block text-xs sm:text-sm">From the Principal's Desk</span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-secondary-900 mb-4 sm:mb-6">
+                Message from Our Principal
+              </h2>
+              
+              <div className="space-y-4 sm:space-y-5">
+                <p className="text-sm sm:text-base text-secondary-600 leading-relaxed italic">
+                  "Education is not the filling of a pail, but the lighting of a fire. At St. Andrew's College, 
+                  we believe in nurturing not just academic excellence, but the complete development of every student."
+                </p>
+                
+                <p className="text-sm sm:text-base text-secondary-600 leading-relaxed">
+                  Our commitment to quality education, combined with a focus on values and character building, 
+                  prepares our students to face the challenges of the modern world with confidence and competence. 
+                  We strive to create an environment where every student can discover their potential, pursue their 
+                  passions, and emerge as responsible global citizens.
+                </p>
+                
+                <p className="text-sm sm:text-base text-secondary-600 leading-relaxed">
+                  With state-of-the-art infrastructure, experienced faculty, and a holistic approach to education, 
+                  we ensure that our students are well-equipped to excel in their chosen fields and make meaningful 
+                  contributions to society.
+                </p>
+              </div>
+
+              <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-secondary-200">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border-2 border-primary-600">
+                    <img 
+                      src="https://images.pexels.com/photos/3778603/pexels-photo-3778603.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop" 
+                      alt="Dr. James Anderson"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-base sm:text-lg font-bold text-secondary-900">Dr. James Anderson</h3>
+                    <p className="text-xs sm:text-sm text-primary-600">Principal, St. Andrew's College</p>
+                    <p className="text-xs text-secondary-500 mt-1">Ph.D. (Education) · 25+ years experience</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Principal's Message Content */}
-      <div className="order-1 lg:order-2">
-        <span className="badge badge-primary mb-3 sm:mb-4 inline-block text-xs sm:text-sm">From the Principal's Desk</span>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-secondary-900 mb-4 sm:mb-6">
-          Message from Our Principal
-        </h2>
-        
-        <div className="space-y-4 sm:space-y-5">
-          <p className="text-sm sm:text-base text-secondary-600 leading-relaxed italic">
-            "Education is not the filling of a pail, but the lighting of a fire. At St. Andrew's College, 
-            we believe in nurturing not just academic excellence, but the complete development of every student."
-          </p>
-          
-          <p className="text-sm sm:text-base text-secondary-600 leading-relaxed">
-            Our commitment to quality education, combined with a focus on values and character building, 
-            prepares our students to face the challenges of the modern world with confidence and competence. 
-            We strive to create an environment where every student can discover their potential, pursue their 
-            passions, and emerge as responsible global citizens.
-          </p>
-          
-          <p className="text-sm sm:text-base text-secondary-600 leading-relaxed">
-            With state-of-the-art infrastructure, experienced faculty, and a holistic approach to education, 
-            we ensure that our students are well-equipped to excel in their chosen fields and make meaningful 
-            contributions to society.
-          </p>
-        </div>
-
-        <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-secondary-200">
-          <div className="flex items-center gap-4">
-           <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border-2 border-primary-600">
-  <img 
-    src="https://images.pexels.com/photos/3778603/pexels-photo-3778603.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop" 
-    alt="Dr. James Anderson"
-    className="w-full h-full object-cover"
-  />
-</div>
-            <div>
-              <h3 className="text-base sm:text-lg font-bold text-secondary-900">Dr. James Anderson</h3>
-              <p className="text-xs sm:text-sm text-primary-600">Principal, St. Andrew's College</p>
-              <p className="text-xs text-secondary-500 mt-1">Ph.D. (Education) · 25+ years experience</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-      {/* ===== TESTIMONIALS SECTION - FULLY RESPONSIVE ===== */}
+      {/* Testimonials Section */}
       <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="container-custom px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-10 md:mb-12">
@@ -594,7 +597,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* ===== CTA SECTION - FULLY RESPONSIVE ===== */}
+      {/* CTA Section */}
       <section className="relative py-16 sm:py-20 md:py-24 overflow-hidden bg-primary-600">
         <div className="container-custom px-4 sm:px-6 lg:px-8 text-center text-white">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">

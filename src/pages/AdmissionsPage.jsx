@@ -13,6 +13,7 @@ import {
   AcademicCapIcon
 } from '@heroicons/react/24/outline';
 import PageHeader from '../components/ui/PageHeader';
+import Navbar from '../components/common/Navbar'; // Add this import
 import SectionTitle from '../components/ui/SectionTitle';
 import { courses } from '../data/collegeData';
 import { imageUrls } from '../data/imageUrls';
@@ -66,15 +67,15 @@ const AdmissionsPage = () => {
       color: 'from-red-500 to-red-600',
       details: ['Program-specific test', 'Online/offline mode', 'Sample papers available']
     },
-{ 
-  number: '06', 
-  title: 'Counselling', 
-  description: 'Merit-based seat allotment and personal counselling session',
-  icon: '🎯',
-  image: 'https://images.pexels.com/photos/3768911/pexels-photo-3768911.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-  color: 'from-indigo-500 to-indigo-600',
-  details: ['Merit list publication', 'Document verification', 'Seat acceptance']
-},
+    { 
+      number: '06', 
+      title: 'Counselling', 
+      description: 'Merit-based seat allotment and personal counselling session',
+      icon: '🎯',
+      image: 'https://images.pexels.com/photos/3768911/pexels-photo-3768911.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+      color: 'from-indigo-500 to-indigo-600',
+      details: ['Merit list publication', 'Document verification', 'Seat acceptance']
+    },
     { 
       number: '07', 
       title: 'Pay Fees', 
@@ -173,6 +174,9 @@ const AdmissionsPage = () => {
         subtitle="Begin your journey at St. Andrew's College. Applications now open for all programs."
         breadcrumb="Admissions"
       />
+
+      {/* Navbar - Added here */}
+      <Navbar />
 
       {/* Tab Navigation */}
       <div className="bg-white border-b">

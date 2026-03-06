@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CalendarIcon, MapPinIcon, ClockIcon } from '@heroicons/react/24/outline';
 import PageHeader from '../components/ui/PageHeader';
+import Navbar from '../components/common/Navbar';
 
 const NewsEventsPage = () => {
   const [activeTab, setActiveTab] = useState('news');
@@ -84,11 +85,14 @@ const NewsEventsPage = () => {
         title="News & Events"
         subtitle="Stay updated with the latest happenings at St. Andrew's"
         breadcrumb="News & Events"
-        bgImage="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
+        page="news"
       />
 
-      {/* Tab Navigation */}
-      <div className=" top-16 z-40 bg-white border-b shadow-sm">
+      {/* Navbar - z-index 40 (from your navbar) */}
+      <Navbar />
+
+      {/* Tab Navigation - z-index 30 (lower than navbar) */}
+      <div className="sticky top-16 z-30 bg-white border-b shadow-sm">
         <div className="container-custom">
           <div className="flex justify-center gap-4 py-4">
             <button
